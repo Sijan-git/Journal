@@ -7,8 +7,8 @@ export const journalSlice = createSlice({
         messageSaved: '',
         notes: [],
         active: null,
+   
 
-        
     },
     reducers: {
 
@@ -17,7 +17,6 @@ export const journalSlice = createSlice({
         state.isSaving = true;
         
      }, 
-
 
         addNewEmptyNote: ( state, action ) => {
 
@@ -29,7 +28,10 @@ export const journalSlice = createSlice({
             state.active = action.payload;
             state.messageSaved = '';
 
+            
+           
         },
+      
         setNotes: ( state, action ) => {
             state.notes = action.payload;
         },
@@ -95,5 +97,3 @@ export const {
     homeBack,
     
 } = journalSlice.actions;
-
-

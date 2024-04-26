@@ -27,17 +27,21 @@ export const SideBar = ({ drawerWidth = 240 }) => {
                     </Typography>
                 </Toolbar>
                 <Divider />
+                
+
 
                 <List>
                     {
                         notes.map( note => (
                             <SideBarItem key={ note.id } { ...note } />
                         ))
+                      
                     }
+                     
                 </List>
-
+            
             </Drawer>
-
+          
         </Box>
     )
 }

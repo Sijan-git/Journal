@@ -6,6 +6,7 @@ import { fileUpload, loadNotes } from "../../helpers";
 
 
 
+
 export const startNewNote = () => {
     return async( dispatch, getState ) => {
 
@@ -29,8 +30,8 @@ export const startNewNote = () => {
          dispatch( addNewEmptyNote( newNote ) );
          dispatch( setActiveNote( newNote ) );
 
-        // console.log({ newDoc, setDocResp })
-    }
+
+        }
 
 }
 
@@ -60,10 +61,12 @@ export const startSaveNote = () => {
         const docRef = doc( FirebaseDB, `${ uid }/journal/notes/${ note.id }`);
         await setDoc( docRef, noteToFireStore, { merge: true });
 
-        dispatch( updateNote( note ));
+
+        dispatch( updateNote( note));
 
     }
 }
+
 
 export const startUploadingFiles = ( files = []) => {
     return async( dispatch ) => {
@@ -111,4 +114,3 @@ export const startInicial = () => {
         console.log({ uid, note });
     };
 };
-
